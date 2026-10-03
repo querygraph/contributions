@@ -1,0 +1,24 @@
+{
+  "name": "@querygraph/contributions",
+  "version": "0.1.0",
+  "description": "Shared contribution publishing workflows with application-owned identity and policy",
+  "type": "module",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/querygraph/contributions.git" },
+  "files": ["lib", "README.md", "LICENSE"],
+  "exports": {
+    "./drafts": { "types": "./lib/drafts.d.ts", "default": "./lib/drafts.js" },
+    "./publication": { "types": "./lib/publication.d.ts", "default": "./lib/publication.js" },
+    "./attachments": { "types": "./lib/attachments.d.ts", "default": "./lib/attachments.js" },
+    "./composer": { "types": "./lib/composer.d.ts", "default": "./lib/composer.js" },
+    "./presentation": { "types": "./lib/presentation.d.ts", "default": "./lib/presentation.js" },
+    "./idempotency": { "types": "./lib/idempotency.d.ts", "default": "./lib/idempotency.js" }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm test"
+  },
+  "devDependencies": { "@types/node": "^24.10.0", "typescript": "~5.9.2" }
+}
